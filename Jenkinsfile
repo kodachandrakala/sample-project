@@ -6,26 +6,14 @@ pipeline {
            git branch: 'main', url: 'https://github.com/kodachandrakala/sample-project.git'
             }
         }
-        stage('mvn test'){
+        stage('docker create image'){
           steps {
-              sh 'mvn test'
+              sh 'docker build -t dockernew/kodachandrakala:latest .'
         
           }  
         }
         
         
-        stage('mvn build'){
-            steps{
-                
-            
-            sh 'mvn package'
-            }
-        }
-        stage('mvn deploy'){
-            steps {
-            echo "deploying package"
         
-            }
-        } 
     }
 }    
