@@ -8,7 +8,7 @@ pipeline {
         }
         stage('docker create image'){
           steps {
-              sh 'docker build -t dockernew/kodachandrakala:latest .'
+              sh 'Docker build -t dockernew/kodachandrakala:latest .'
         
           }  
         }
